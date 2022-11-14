@@ -1,0 +1,65 @@
+[
+    {
+        "source": "repository_response",
+        "source_field": "owner.username",
+        "warehouse_field": "repo_owner",
+        "transformation_expression": null,
+        "transformation_description": "Extracting and renaming Owner field for the repository"
+    },
+    {
+        "source_field": null,
+        "warehouse_field": "source",
+        "warehouse_value": "GitLab",
+        "transformation_expression": "Field Addition",
+        "transformation_description": "Adding Source"
+    },
+    {
+        "source": "repository_response",
+        "source_field": "id",
+        "warehouse_field": "repo_id",
+        "transformation_expression": null,
+        "transformation_description": "Extracting and renaming Repository ID field for the repository"
+    },
+    {
+        "source": "repository_response",
+        "source_field": "name",
+        "warehouse_field": "repo_name",
+        "transformation_expression": null,
+        "transformation_description": "Extracting Name field for the repository"
+    },
+    {
+        "source": "repository_response",
+        "source_field": "visibility",
+        "warehouse_field": "is_private",
+        "transformation_expression": null,
+        "transformation_description": "Transforming and Extracting is_private field for the repository"
+    },
+    {
+        "source": "pull_requests_response",
+        "source_field": "iid",
+        "warehouse_field": "pr_number",
+        "transformation_expression": null,
+        "transformation_description": "Extracting PR number field for the request"
+    },
+    {
+        "source": "pull_requests_response",
+        "source_field": "title",
+        "warehouse_field": "pr_title",
+        "transformation_expression": null,
+        "transformation_description": "Extracting PR title field for the request"
+    },
+    {
+        "source": "pull_requests_response",
+        "source_field": "state",
+        "warehouse_field": "pr_state",
+        "transformation_expression": null,
+        "transformation_description": "Extracting PR state field for the request"
+    },
+    {
+        "source": "pull_requests_response",
+        "source_field": "merged_by.username",
+        "warehouse_field": "pr_owner",
+        "transformation_expression": null,
+        "transformation_description": "Extracting PR owner field for the request"
+    }
+]

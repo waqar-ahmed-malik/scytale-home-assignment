@@ -7,6 +7,13 @@ from gitlab_extract import GitLab
 
 
 def extract_data():
+    """Extraction python modules `github_extraction.py` and `gitlab_extraction.py`.
+    Both the modules authenticate with the respective APIs using Access Tokens via
+    Python's `request` module and extracts:
+        - List of repositories for the given user
+        - List of Pull Requests for each repository
+        Once the raw data is extracted, it's being stored in JSON files under source folder name
+    """
     github_obj = GitHub(os.environ['GITHUB_ACCESS_TOKEN'])
     github_obj.get_pull_requests()
     gitlab_obj = GitLab(
@@ -15,6 +22,14 @@ def extract_data():
 
 
 def normalize_data():
+    """Based on the extracted data, both repositories and pull requests raw data is being read by
+    spark using `pyspark` python module for each source. The read JSON data is being transformed as
+    a spark DataFrame and gets through multiple transformations including, field rename, field
+    addition and field calculation based on the source config.
+    Once both the responses and transformed, a final DataFrame is being created by merging the
+    transformed response and the final normalized data is being written to a new JSOn file
+    `<source-name>-normalized.json`
+    """
     spark = SparkSession.builder.appName(
         "Scytale Home Assignment").getOrCreate()
 

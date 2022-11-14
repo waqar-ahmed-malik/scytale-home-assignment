@@ -67,5 +67,14 @@ where,
 - GITLAB_ACCESS_TOKEN
 - GITLAB_USER_ID
 
-### Run Locally
-`python3 main.py`
+### Run Locally on Mac/Linux
+- Clone the Repository to Local: `git clone https://github.com/waqar-ahmed-malik/scytale-home-assignment.git`
+- Switch to the Local Repository: `cd scytale-home-assignment/`
+- Create a Virtual Environments `python3 -m venv .env`
+- Activate the Virtual Environment: `source .env/bin/activate`
+- Install Python Dependencies: `pip install -r requirements.txt`
+- Set Credentials in Environment Variables:
+    - `export GITHUB_ACCESS_TOKEN="<REPLACE_WITH_ACTUAL_GITHUB_ACCESS_TOKEN>"`
+    - `export GITLAB_ACCESS_TOKEN="<REPLACE_WITH_ACTUAL_GITLAB_ACCESS_TOKEN>"`
+    - `export GITLAB_USER_ID="<REPLACE_WITH_ACTUAL_GITLAB_USER_ID>"`
+- Run the main script: `python3 main.py`
